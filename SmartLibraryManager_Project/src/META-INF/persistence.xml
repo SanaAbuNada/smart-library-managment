@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.1">
+  <persistence-unit name="SmartLibraryManager_ProjectPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+    <class>entities.Book</class>
+    <class>entities.Borrowing</class>
+    <class>entities.Member</class>
+    <class>entities.User</class>
+
+   <properties>
+  <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+  <property name="javax.persistence.jdbc.url"
+            value="jdbc:mysql://127.0.0.1:3307/library?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;useSSL=false"/>
+  <property name="javax.persistence.jdbc.user" value="root"/>
+  <property name="javax.persistence.jdbc.password" value=""/>
+  <property name="javax.persistence.schema-generation.database.action" value="create"/>
+</properties>
+
+  </persistence-unit>
+</persistence>

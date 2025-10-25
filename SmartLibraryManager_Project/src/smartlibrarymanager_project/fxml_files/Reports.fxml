@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Region?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.ReportsController"
+      spacing="10">
+
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <children>
+            <Label text="Reports"
+                   style="-fx-font-size:18; -fx-font-weight:bold; -fx-text-fill:#3f5fa8;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label fx:id="lblStatus" text="Ready"/>
+            <ProgressIndicator fx:id="pi" visible="false" prefWidth="18" prefHeight="18"/>
+
+            <Button fx:id="btnBack"
+                    text="Dashboard"
+                    onAction="#handleBackToDashboard"
+                    style="-fx-background-color:#3f5fa8; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:6 12;"/>
+        </children>
+    </HBox>
+
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <children>
+            <Label text="Report:"/>
+            <ComboBox fx:id="cbType" prefWidth="170" promptText="Select report..."/>
+
+            <Label text="From:"/>
+            <DatePicker fx:id="dpFrom"/>
+            <Label text="To:"/>
+            <DatePicker fx:id="dpTo"/>
+
+            <Label text="Member:"/>
+            <ComboBox fx:id="cbMember" prefWidth="160" promptText="Any member"/>
+
+            <Label text="Filter:"/>
+            <TextField fx:id="tfFilter" promptText="author/title contains..."/>
+
+            <Button fx:id="btnGenerate" text="Generate" defaultButton="true"/>
+            <Button fx:id="btnCancel" text="Cancel" disable="true" cancelButton="true"/>
+        </children>
+    </HBox>
+
+    <TextArea fx:id="taOutput"
+              VBox.vgrow="ALWAYS"
+              prefRowCount="20"
+              wrapText="false"
+              editable="false"
+              promptText="Report output appears here..."/>
+</VBox>
